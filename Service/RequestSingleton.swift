@@ -78,4 +78,33 @@ class RequestSingleton {
         
     }
     
+    static func queryPosts(completion: @escaping ([String]?) -> Void) {
+        
+        let query : Document = ["content": ["$exists": true] as Document];
+        
+        
+        serviceClient()
+        
+        itemsCollection = mongoClient?.db("mobileTest").collection("posts")
+        
+        itemsCollection?.find(query, options: nil).toArray({ results in
+            
+            var array: [String] = []
+            switch results {
+            case .success(let results):
+                print("Successfully found \(results.count) documents: ")
+                results.forEach({item in
+                    
+                    let data = item.canonicalExtendedJSON.data(using: .utf8)
+                    let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                    let dictionary = json as? [String: Any]
+                    array.append(dictionary!["content"] as! String)
+                })
+            case .failure(let error):
+                print("Failed to find documents: \(error)")
+            }
+            completion(array)
+        })
+    }
+    
 }
