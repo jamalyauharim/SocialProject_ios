@@ -11,7 +11,7 @@ import UIKit
 class DefaultTimeLineController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var contentArray: [String] = []
+    var contentArray: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class DefaultTimeLineController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getPosts()
+        tableView.reloadData()
     }
     
     func getPosts() {
@@ -35,6 +36,7 @@ class DefaultTimeLineController: UIViewController {
                 for response in responseArray {
                     self.contentArray.append(response)
                 }
+                
                 self.tableView.reloadData()
             }
         }
@@ -50,9 +52,9 @@ extension DefaultTimeLineController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: DynamicTableViewCell.identifier, for: indexPath) as! DynamicTableViewCell
-        cell.title?.text = "Title Test..."
         cell.content.isEditable = false
-        cell.content.text = contentArray[indexPath.row]
+        cell.title?.text = contentArray[indexPath.row].title
+        cell.content.text = contentArray[indexPath.row].content
         
         return cell
     }
