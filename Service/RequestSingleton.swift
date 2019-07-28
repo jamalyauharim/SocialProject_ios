@@ -81,12 +81,9 @@ class RequestSingleton {
     static func queryPosts(completion: @escaping ([String]?) -> Void) {
         
         let query : Document = ["content": ["$exists": true] as Document];
-        
-        
         serviceClient()
         
         itemsCollection = mongoClient?.db("mobileTest").collection("posts")
-        
         itemsCollection?.find(query, options: nil).toArray({ results in
             
             var array: [String] = []
@@ -106,5 +103,4 @@ class RequestSingleton {
             completion(array)
         })
     }
-    
 }
