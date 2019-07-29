@@ -24,22 +24,7 @@ class DefaultTimeLineController: UIViewController {
     }
     
     func getPosts() {
-        RequestSingleton.queryPosts { (responseArray) in
-            DispatchQueue.main.async {
-                guard let responseArray = responseArray else {
-                    if self.isViewLoaded && self.view.window != nil {
-                        
-                    }
-                    return
-                }
-                
-                for response in responseArray {
-                    self.contentArray.append(response)
-                }
-                
-                self.tableView.reloadData()
-            }
-        }
+        RequestSingleton.queryPosts()
     }
 }
 
@@ -53,9 +38,9 @@ extension DefaultTimeLineController: UITableViewDataSource, UITableViewDelegate 
     
         let cell = tableView.dequeueReusableCell(withIdentifier: DynamicTableViewCell.identifier, for: indexPath) as! DynamicTableViewCell
         cell.content.isEditable = false
-        cell.userNameLabel.text = contentArray[indexPath.row].userName
-        cell.title?.text = contentArray[indexPath.row].title
-        cell.content.text = contentArray[indexPath.row].content
+//        cell.userNameLabel.text = contentArray[indexPath.row].userName
+//        cell.title?.text = contentArray[indexPath.row].title
+//        cell.content.text = contentArray[indexPath.row].content
         
         return cell
     }

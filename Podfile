@@ -6,7 +6,8 @@ target 'SocialProject' do
   use_frameworks!
 
   # Pods for SocialProject
-pod 'StitchSDK', '~> 5.0.0'
-pod 'StitchLocalMongoDBService', '~> 5.0.0'
+# pod 'StitchSDK', '~> 5.0.0'
+# pod 'StitchLocalMongoDBService', '~> 5.0.0'
+pod 'Alamofire'
 
 end

@@ -18,11 +18,11 @@
 		5E73B86622E131E30021D05E /* DynamicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73B86522E131E30021D05E /* DynamicTableViewCell.swift */; };
 		5E73B86822E20B380021D05E /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73B86722E20B380021D05E /* SettingsController.swift */; };
 		5E73B86A22E2D8BB0021D05E /* CreatePostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73B86922E2D8BB0021D05E /* CreatePostController.swift */; };
+		5E95046222EF9419003FBF56 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95046122EF9419003FBF56 /* user.swift */; };
 		5EB3281722DEBCD2006A6C3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3281622DEBCD1006A6C3B /* AppDelegate.swift */; };
 		5EB3281C22DEBCD2006A6C3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3281A22DEBCD2006A6C3B /* Main.storyboard */; };
 		5EB3281E22DEBCD4006A6C3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3281D22DEBCD4006A6C3B /* Assets.xcassets */; };
 		5EB3282122DEBCD4006A6C3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3281F22DEBCD4006A6C3B /* LaunchScreen.storyboard */; };
-		5EDFC3F422EA382400422A46 /* MongoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDFC3F322EA382400422A46 /* MongoSwift.framework */; };
 		F2E356390E520A77BA44AC2F /* Pods_SocialProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72BBE37564BADFE29172020 /* Pods_SocialProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +39,7 @@
 		5E73B86522E131E30021D05E /* DynamicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewCell.swift; sourceTree = "<group>"; };
 		5E73B86722E20B380021D05E /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		5E73B86922E2D8BB0021D05E /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
+		5E95046122EF9419003FBF56 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		5EB3281322DEBCD1006A6C3B /* SocialProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB3281622DEBCD1006A6C3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB3281B22DEBCD2006A6C3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDFC3F422EA382400422A46 /* MongoSwift.framework in Frameworks */,
 				F2E356390E520A77BA44AC2F /* Pods_SocialProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				5E54E7F922EE514F00D71F5C /* post.swift */,
+				5E95046122EF9419003FBF56 /* user.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E95046222EF9419003FBF56 /* user.swift in Sources */,
 				5E73B86822E20B380021D05E /* SettingsController.swift in Sources */,
 				5E73B85422E0B38A0021D05E /* CreateAccountController.swift in Sources */,
 				5E73B85222E0B37A0021D05E /* LogInController.swift in Sources */,
