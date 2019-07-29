@@ -27,7 +27,7 @@ class RequestSingleton {
         
         let completeUrl = url + "api/users"
 
-        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
@@ -48,7 +48,7 @@ class RequestSingleton {
             ]
         ]
         
-        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
@@ -63,7 +63,7 @@ class RequestSingleton {
     static func queryPosts() {
         let completeUrl = url + "api/posts"
         
-        Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
