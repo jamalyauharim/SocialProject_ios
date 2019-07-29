@@ -26,13 +26,14 @@ class RequestSingleton {
         )
     }
     
-    static func createAccount(name: String, lastName: String, email: String, password: String) {
+    static func createAccount(name: String, lastName: String, email: String, password: String, mentorAccount: Bool) {
         
         let newAccount: Document = [
             "name" : name,
             "lastName" : lastName,
             "email" : email,
-            "password" : password
+            "password" : password,
+            "mentorAccount" : mentorAccount
         ]
         
         serviceClient()

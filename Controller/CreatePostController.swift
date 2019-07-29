@@ -15,7 +15,9 @@ class CreatePostController: UIViewController {
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var createPostButton: UIButton!
     @IBOutlet weak var categorySelectionTextField: UITextField!
-    @IBOutlet weak var postContent: UITextView!
+    @IBOutlet weak var postContent: UITextField!
+    
+    
     var selectedCategory: String = ""
     
     // categories of post
@@ -53,7 +55,7 @@ class CreatePostController: UIViewController {
     
     @IBAction func createPost(_ sender: Any) {
         
-        if (postTitle.text?.isEmpty == true || postContent.text.isEmpty == true || categorySelectionTextField.text?.isEmpty == true)
+        if (postTitle.text?.isEmpty == true || postContent.text?.isEmpty == true || categorySelectionTextField.text?.isEmpty == true)
         {
                 Alert.displayAlert(on: self, with: "You are missing fields", message: "Please complete your post")
                 return

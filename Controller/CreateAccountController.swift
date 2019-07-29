@@ -17,7 +17,8 @@ class CreateAccountController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var cPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
-    
+    @IBOutlet weak var switchForMentor: UISwitch!
+    var registerAcountForMentor: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,10 +31,20 @@ class CreateAccountController: UIViewController {
             return
         }
         
+        if (switchForMentor.isOn) {
+            registerAcountForMentor = true
+        } else {
+            registerAcountForMentor = false
+        }
+        
         RequestSingleton.createAccount(name: nameTextField.text!,
                                        lastName: lastNameTextField.text!,
                                        email: emailTextField.text!,
-                                       password: passwordTextField.text! )
+                                       password: passwordTextField.text!,
+                                       mentorAccount: registerAcountForMentor
+                                        )
+        
+        print(registerAcountForMentor)
     }
     
 }

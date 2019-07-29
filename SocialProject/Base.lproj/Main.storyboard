@@ -129,6 +129,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mentor Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuT-6Z-QD3">
+                                <rect key="frame" x="51" y="392" width="193" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vu0-d9-WLm">
+                                <rect key="frame" x="288" y="395" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -160,6 +171,7 @@
                         <outlet property="lastNameTextField" destination="SGI-wW-guL" id="AGI-YO-RMa"/>
                         <outlet property="nameTextField" destination="0pv-mQ-KMl" id="lYY-bE-4cV"/>
                         <outlet property="passwordTextField" destination="LSV-Th-fKo" id="0pX-CN-YOj"/>
+                        <outlet property="switchForMentor" destination="vu0-d9-WLm" id="1dk-X6-W87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwz-Tq-Z9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,33 +351,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="679.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2M-HK-7wt">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2M-HK-7wt">
+                                                    <rect key="frame" x="20" y="63" width="374" height="97"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Y8s-vp-WkC"/>
-                                                        <constraint firstAttribute="width" constant="374" id="owD-hZ-OBe"/>
+                                                        <constraint firstAttribute="height" constant="97" id="OPD-Us-BqN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-tf-A2x">
-                                                    <rect key="frame" x="0.0" y="48" width="414" height="401.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-tf-A2x">
+                                                    <rect key="frame" x="20" y="168" width="374" height="282"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="414" id="3Gu-4i-Dzs"/>
-                                                        <constraint firstAttribute="height" constant="401.5" id="9Xj-QS-jTN"/>
+                                                        <constraint firstAttribute="height" constant="282" id="OfS-mZ-kUb"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-ZT-NFe">
-                                                    <rect key="frame" x="0.0" y="480" width="399" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-ZT-NFe">
+                                                    <rect key="frame" x="0.0" y="480" width="391" height="94"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQU-xj-YgB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="399" height="50"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQU-xj-YgB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="391" height="94"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVx-Pa-TKa">
                                                                     <rect key="frame" x="8" y="20" width="383" height="21"/>
@@ -379,20 +388,36 @@
                                                         </view>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-bo-WI6">
+                                                    <rect key="frame" x="20" y="11" width="374" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="VLC-7v-HjM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9XL-tf-A2x" firstAttribute="top" secondItem="x2M-HK-7wt" secondAttribute="bottom" constant="8" id="B7m-Tl-P0G"/>
-                                                <constraint firstAttribute="trailing" secondItem="9XL-tf-A2x" secondAttribute="trailing" id="DOq-rl-NpQ"/>
-                                                <constraint firstItem="9XL-tf-A2x" firstAttribute="leading" secondItem="09j-0B-y7h" secondAttribute="leading" id="OAR-sm-UhH"/>
-                                                <constraint firstItem="x2M-HK-7wt" firstAttribute="leading" secondItem="09j-0B-y7h" secondAttribute="leading" constant="20" id="TfZ-SW-erp"/>
-                                                <constraint firstItem="x2M-HK-7wt" firstAttribute="top" secondItem="09j-0B-y7h" secondAttribute="top" id="W14-Mo-dKW"/>
-                                                <constraint firstAttribute="bottom" secondItem="9XL-tf-A2x" secondAttribute="bottom" constant="200" id="hWG-C4-mZJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="x2M-HK-7wt" secondAttribute="trailing" constant="20" id="tVF-FB-L5K"/>
+                                                <constraint firstItem="x2M-HK-7wt" firstAttribute="leading" secondItem="9XL-tf-A2x" secondAttribute="leading" id="2rQ-Rg-3eS"/>
+                                                <constraint firstItem="qSm-ZT-NFe" firstAttribute="leading" secondItem="09j-0B-y7h" secondAttribute="leading" id="4fQ-Rm-03y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qSm-ZT-NFe" secondAttribute="trailing" constant="3" id="8Jd-8K-Q7z"/>
+                                                <constraint firstItem="iqa-bo-WI6" firstAttribute="leading" secondItem="x2M-HK-7wt" secondAttribute="leading" id="Bvk-Cm-xO9"/>
+                                                <constraint firstItem="qSm-ZT-NFe" firstAttribute="top" secondItem="9XL-tf-A2x" secondAttribute="bottom" constant="30" id="HML-Zd-WQx"/>
+                                                <constraint firstAttribute="bottom" secondItem="qSm-ZT-NFe" secondAttribute="bottom" constant="149.5" id="HpO-RK-3ZI"/>
+                                                <constraint firstItem="iqa-bo-WI6" firstAttribute="leading" secondItem="09j-0B-y7h" secondAttribute="leadingMargin" id="SRt-E1-vkn"/>
+                                                <constraint firstItem="x2M-HK-7wt" firstAttribute="top" secondItem="iqa-bo-WI6" secondAttribute="bottom" constant="8" symbolic="YES" id="VfV-vl-cRK"/>
+                                                <constraint firstItem="iqa-bo-WI6" firstAttribute="trailing" secondItem="x2M-HK-7wt" secondAttribute="trailing" id="Xdg-9c-QEm"/>
+                                                <constraint firstItem="x2M-HK-7wt" firstAttribute="trailing" secondItem="9XL-tf-A2x" secondAttribute="trailing" id="ayd-ak-Vcd"/>
+                                                <constraint firstItem="9XL-tf-A2x" firstAttribute="top" secondItem="x2M-HK-7wt" secondAttribute="bottom" constant="8" symbolic="YES" id="fbw-d2-TJ2"/>
+                                                <constraint firstItem="iqa-bo-WI6" firstAttribute="top" secondItem="09j-0B-y7h" secondAttribute="topMargin" constant="-44" id="kHQ-a6-tSv"/>
+                                                <constraint firstItem="iqa-bo-WI6" firstAttribute="trailing" secondItem="09j-0B-y7h" secondAttribute="trailingMargin" id="sNX-NW-HUy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="content" destination="9XL-tf-A2x" id="Bli-QK-QR8"/>
                                             <outlet property="title" destination="x2M-HK-7wt" id="EMY-xh-q50"/>
+                                            <outlet property="userName" destination="iqa-bo-WI6" id="bFM-jd-DU0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -473,16 +498,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x8e-kQ-36n">
-                                <rect key="frame" x="20" y="222" width="374" height="299"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Category" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yze-E9-bBd">
                                 <rect key="frame" x="20" y="614" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" placeholder="What its going on?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGp-os-mIL">
+                                <rect key="frame" x="20" y="191" width="374" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -495,7 +519,7 @@
                     <connections>
                         <outlet property="categorySelectionTextField" destination="Yze-E9-bBd" id="V2h-jC-VT2"/>
                         <outlet property="createPostButton" destination="aZg-gE-lXQ" id="GAN-Uq-hfo"/>
-                        <outlet property="postContent" destination="x8e-kQ-36n" id="Slc-ic-1Vh"/>
+                        <outlet property="postContent" destination="eGp-os-mIL" id="pKW-il-beL"/>
                         <outlet property="postTitle" destination="7eE-Fs-f9U" id="qGY-bj-U7s"/>
                     </connections>
                 </viewController>
@@ -531,7 +555,7 @@
         <image name="user" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Ir-Ch-fTA"/>
-        <segue reference="tpO-hz-jRe"/>
+        <segue reference="1yj-j5-oGp"/>
+        <segue reference="ChX-k3-5A1"/>
     </inferredMetricsTieBreakers>
 </document>

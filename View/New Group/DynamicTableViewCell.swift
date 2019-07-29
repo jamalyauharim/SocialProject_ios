@@ -14,7 +14,8 @@ class DynamicTableViewCell: UITableViewCell {
     // components of cell
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var content: UITextView!
- 
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     
 }
 
