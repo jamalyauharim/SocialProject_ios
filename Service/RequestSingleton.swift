@@ -8,24 +8,10 @@
 
 import Foundation
 import UIKit
-//import StitchCore
-//import StitchCoreRemoteMongoDBService
-//import StitchRemoteMongoDBService
 import Alamofire
 
-// access to dataBase components
-//private var stitchClient = Stitch.defaultAppClient!
-//private var mongoClient: RemoteMongoClient?
-//private var itemsCollection: RemoteMongoCollection<Document>?
-
 class RequestSingleton {
-    
-    static func serviceClient() {
-//        mongoClient = try! stitchClient.serviceClient(
-//            fromFactory: remoteMongoClientFactory,
-//            withName: "mongodb-atlas"
-//        )
-    }
+    private static let url: String = "http://localhost:5000/"
     
     static func createAccount(name: String, lastName: String, email: String, password: String, mentorAccount: Bool) {
         
@@ -39,9 +25,9 @@ class RequestSingleton {
             ]
         ]
         
-        let url = "http://localhost:5000/api/users"
+        let completeUrl = url + "api/users"
 
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
@@ -78,9 +64,9 @@ class RequestSingleton {
 //    }
 
     static func queryPosts() {
-        let url = "http://localhost:5000/api/posts"
+        let completeUrl = url + "api/posts"
         
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseString { response in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
