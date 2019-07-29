@@ -43,8 +43,7 @@ class CreateAccountController: UIViewController {
                                        password: passwordTextField.text!,
                                        mentorAccount: registerAcountForMentor
                                         )
-        
-        print(registerAcountForMentor)
+        performSegue(withIdentifier: "timeToLogIn", sender: self)
     }
     
 }

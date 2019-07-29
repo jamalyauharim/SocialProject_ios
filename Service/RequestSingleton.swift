@@ -37,32 +37,29 @@ class RequestSingleton {
                 }
             }
         }
-        
     }
     
-//    static func createPost(userName: String, title: String, content: String, category: String) {
-//        
-//        let newPost: Document = [
-//            "user_name" : userName,
-//            "title" : title,
-//            "category" : category,
-//            "content" : content
-//        ]
-//        
-////        serviceClient()
-////
-////        itemsCollection = mongoClient?.db("mobileTest").collection("posts")
-//        
-////        itemsCollection?.insertOne(newPost) { result in
-////            switch result {
-////            case .success(let result):
-////                print("Successfully inserted item with _id: \(result.insertedId))");
-////            case .failure(let error):
-////                print("Failed to insert item: \(error)");
-////            }
-//        }
-//    }
-
+    static func authenticateUser(email: String, password: String) {
+        let completeUrl = url + "api/users/login"
+        let parameters: [String : Any] = [
+            "user" : [
+                "email" : email,
+                "password" : password
+            ]
+        ]
+        
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success:
+                    print("User authenticated = \(response)")
+                case .failure(let error):
+                    print("Not possible to authenticate user = \(error)")
+                }
+            }
+        }
+    }
+    
     static func queryPosts() {
         let completeUrl = url + "api/posts"
         
@@ -76,6 +73,5 @@ class RequestSingleton {
                 }
             }
         }
-
     }
 }

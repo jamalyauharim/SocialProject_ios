@@ -18,5 +18,14 @@ class LogInController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func authenticationTrigger(_ sender: Any) {
+        
+        if (emailTextField.text?.isEmpty == true || passwordTextField.text?.isEmpty == true) {
+            Alert.displayAlert(on: self, with: "You are missing fields!", message: "Please insert all information required.")
+            return
+        }
+        
+        RequestSingleton.authenticateUser(email: emailTextField.text!, password: passwordTextField.text!)
+    }
     
 }

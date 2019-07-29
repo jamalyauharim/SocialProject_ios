@@ -92,7 +92,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-0k-eYs">
                                 <rect key="frame" x="137" y="468" width="107" height="36"/>
@@ -108,7 +108,7 @@
                                 <rect key="frame" x="46" y="337" width="289" height="37"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="301-49-0fo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -121,10 +121,10 @@
                                                 <rect key="frame" x="20" y="0.0" width="50" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="gM2-3U-MxZ"/>
+                                                </connections>
                                             </button>
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="ChX-k3-5A1"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -172,6 +172,7 @@
                         <outlet property="nameTextField" destination="0pv-mQ-KMl" id="lYY-bE-4cV"/>
                         <outlet property="passwordTextField" destination="LSV-Th-fKo" id="0pX-CN-YOj"/>
                         <outlet property="switchForMentor" destination="vu0-d9-WLm" id="1dk-X6-W87"/>
+                        <segue destination="t6V-KH-6jO" kind="show" identifier="timeToLogIn" id="aI7-mG-8BA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwz-Tq-Z9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,7 +187,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80f-4v-qrY">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80f-4v-qrY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -196,10 +197,10 @@
                                                 <rect key="frame" x="20" y="0.0" width="50" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="pBL-U9-tT2"/>
+                                                </connections>
                                             </button>
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="tpO-hz-jRe"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -235,21 +236,23 @@
                                 </constraints>
                                 <state key="normal" title="Log In"/>
                                 <connections>
+                                    <action selector="authenticationTrigger:" destination="t6V-KH-6jO" eventType="touchUpInside" id="80t-Ea-v14"/>
                                     <segue destination="DsK-Mv-H8H" kind="show" id="4Ir-Ch-fTA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="top" secondItem="80f-4v-qrY" secondAttribute="bottom" constant="34" id="2ks-hg-IRS"/>
-                            <constraint firstItem="7Fm-Aq-GIj" firstAttribute="top" secondItem="dBv-Lm-jpW" secondAttribute="bottom" constant="17" id="5pd-OZ-5nx"/>
-                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="centerX" secondItem="80f-4v-qrY" secondAttribute="centerX" id="EVw-qr-fiE"/>
-                            <constraint firstItem="aEo-kL-hKk" firstAttribute="centerX" secondItem="80f-4v-qrY" secondAttribute="centerX" id="eUB-gt-p0l"/>
-                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="centerX" secondItem="gkW-6Z-lGI" secondAttribute="centerX" id="ip7-P0-BPf"/>
-                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="top" secondItem="gkW-6Z-lGI" secondAttribute="top" constant="122" id="oPa-D6-5oM"/>
-                            <constraint firstItem="aEo-kL-hKk" firstAttribute="leading" secondItem="Ogb-1u-UK0" secondAttribute="leading" constant="167" id="pMH-cs-Kqb"/>
-                            <constraint firstItem="Ogb-1u-UK0" firstAttribute="bottom" secondItem="aEo-kL-hKk" secondAttribute="bottom" constant="506" id="pRc-kv-Zm4"/>
-                            <constraint firstItem="7Fm-Aq-GIj" firstAttribute="centerX" secondItem="80f-4v-qrY" secondAttribute="centerX" id="u9D-ir-e3J"/>
+                            <constraint firstItem="80f-4v-qrY" firstAttribute="top" secondItem="Ogb-1u-UK0" secondAttribute="top" id="4ln-Vc-976"/>
+                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="top" secondItem="80f-4v-qrY" secondAttribute="bottom" constant="34" id="DBt-dR-fmf"/>
+                            <constraint firstItem="7Fm-Aq-GIj" firstAttribute="centerX" secondItem="aEo-kL-hKk" secondAttribute="centerX" id="FmL-VV-JUq"/>
+                            <constraint firstItem="dBv-Lm-jpW" firstAttribute="centerX" secondItem="7Fm-Aq-GIj" secondAttribute="centerX" id="PcE-FS-Mwf"/>
+                            <constraint firstAttribute="trailing" secondItem="80f-4v-qrY" secondAttribute="trailing" id="WHn-6D-f3f"/>
+                            <constraint firstItem="80f-4v-qrY" firstAttribute="centerX" secondItem="dBv-Lm-jpW" secondAttribute="centerX" id="mBR-81-ael"/>
+                            <constraint firstItem="80f-4v-qrY" firstAttribute="leading" secondItem="gkW-6Z-lGI" secondAttribute="leading" id="niU-4a-W8m"/>
+                            <constraint firstItem="Ogb-1u-UK0" firstAttribute="bottom" secondItem="aEo-kL-hKk" secondAttribute="bottom" constant="506" id="qeT-BF-VfU"/>
+                            <constraint firstItem="7Fm-Aq-GIj" firstAttribute="top" secondItem="dBv-Lm-jpW" secondAttribute="bottom" constant="17" id="tTu-gI-zhz"/>
+                            <constraint firstItem="aEo-kL-hKk" firstAttribute="leading" secondItem="Ogb-1u-UK0" secondAttribute="leading" constant="167" id="vex-Qu-5ha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ogb-1u-UK0"/>
                     </view>
@@ -555,7 +558,8 @@
         <image name="user" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1yj-j5-oGp"/>
-        <segue reference="ChX-k3-5A1"/>
+        <segue reference="4Ir-Ch-fTA"/>
+        <segue reference="aI7-mG-8BA"/>
+        <segue reference="pBL-U9-tT2"/>
     </inferredMetricsTieBreakers>
 </document>
