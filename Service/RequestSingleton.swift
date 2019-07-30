@@ -49,7 +49,7 @@ class RequestSingleton {
 //    }
     
     
-    static func authenticateUser(email: String, password: String) {
+    static func authenticateUser(email: String, password: String, completion: @escaping (Bool?) -> Void) {
         let completeUrl = url + "api/users/login"
         let parameters: [String : Any] = [
             "user" : [
@@ -66,6 +66,14 @@ class RequestSingleton {
                 case .failure(let error):
                     print("Not possible to authenticate user = \(error)")
                 }
+                
+                let json = JSON(response.data)
+                let result = json["errors"]["email or password"]
+                if (result == "is invalid") {
+                    completion(false)
+                }
+                
+                completion(true)
             }
         }
     }
