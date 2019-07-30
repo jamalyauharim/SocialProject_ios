@@ -40,6 +40,15 @@ class RequestSingleton {
         }
     }
     
+//    static func createPost(title: String, content: String, category: String) {
+//        let parameters: [String :  Any] = [
+//            "posts" : [
+//                "author" : "something"
+//            ]
+//        ]
+//    }
+    
+    
     static func authenticateUser(email: String, password: String) {
         let completeUrl = url + "api/users/login"
         let parameters: [String : Any] = [

@@ -11,7 +11,11 @@ import UIKit
 class DefaultTimeLineController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var contentArray: [Post] = []
+    var contentArray: [Post] = []  {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,11 @@ class DefaultTimeLineController: UIViewController {
         super.viewWillAppear(animated)
         getPosts()
         tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.contentArray = []
     }
     
     func getPosts() {

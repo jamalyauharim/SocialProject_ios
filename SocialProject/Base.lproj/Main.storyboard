@@ -420,7 +420,6 @@
                                         <connections>
                                             <outlet property="content" destination="9XL-tf-A2x" id="Bli-QK-QR8"/>
                                             <outlet property="title" destination="x2M-HK-7wt" id="EMY-xh-q50"/>
-                                            <outlet property="userName" destination="iqa-bo-WI6" id="bFM-jd-DU0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
