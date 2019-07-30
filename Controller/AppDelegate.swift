@@ -18,30 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        do {
-//            let _ = try Stitch.initializeDefaultAppClient(
-//                withClientAppID: "socialproject-ngpzw"
-//            )
-//        } catch {
-//            print("Failed to initialize MongoDB Stitch iOS SDK: \(error)")
-//        }
-//        
-//        let client = Stitch.defaultAppClient!
-//        
-//        print("logging in anonymously")
-//        client.auth.login(withCredential: AnonymousCredential()) { result in
-//            switch result {
-//            case .success(let user):
-//                print("logged in anonymous as user \(user.id)")
-//                DispatchQueue.main.async {
-//                    // update UI accordingly
-//                }
-//            case .failure(let error):
-//                print("Failed to log in: \(error)")
-//            }
-//        }
-        
         return true
     }
 
