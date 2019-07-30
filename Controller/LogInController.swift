@@ -24,8 +24,8 @@ class LogInController: UIViewController {
             Alert.displayAlert(on: self, with: "You are missing fields!", message: "Please insert all information required.")
             return
         }
-        
-        RequestSingleton.authenticateUser(email: emailTextField.text!, password: passwordTextField.text!)
+        RequestSingleton.authenticateUser(email: emailTextField.text!, password: passwordTextField.text!)        
+        performSegue(withIdentifier: "goToTimeLine", sender: self)
     }
     
 }

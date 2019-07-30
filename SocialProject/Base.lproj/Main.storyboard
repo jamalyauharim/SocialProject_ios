@@ -237,7 +237,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="authenticationTrigger:" destination="t6V-KH-6jO" eventType="touchUpInside" id="80t-Ea-v14"/>
-                                    <segue destination="DsK-Mv-H8H" kind="show" id="4Ir-Ch-fTA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,6 +258,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="dBv-Lm-jpW" id="99K-zH-UyZ"/>
                         <outlet property="passwordTextField" destination="7Fm-Aq-GIj" id="fje-Xz-4ik"/>
+                        <segue destination="DsK-Mv-H8H" kind="show" identifier="goToTimeLine" id="Ik4-sQ-RUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5b-TQ-AWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,7 +558,7 @@
         <image name="user" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Ir-Ch-fTA"/>
+        <segue reference="Ik4-sQ-RUG"/>
         <segue reference="aI7-mG-8BA"/>
         <segue reference="pBL-U9-tT2"/>
     </inferredMetricsTieBreakers>

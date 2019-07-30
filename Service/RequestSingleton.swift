@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class RequestSingleton {
     private static let url: String = "http://localhost:5000/"
@@ -63,19 +64,21 @@ class RequestSingleton {
     static func queryPosts(completion: @escaping ([Post]?) -> Void){
         let completeUrl = url + "api/posts"
         var postArray: [Post] = []
+        
         Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
-                    case .success(let JSON):
-                    print("Success)")
+                    case .success:
+                    print("success")
                     case .failure(let error):
                     print("Request failed with error: \(error)")
-                  
-
                 }
                 
-               completion(postArray)
+                let json = JSON(response.data)
+                let post = Post(content: json["posts"][0]["body"].string!, title: json["posts"][0]["title"].string!)
+                postArray.append(post)
                 
+                completion(postArray)
             }
         }
     }

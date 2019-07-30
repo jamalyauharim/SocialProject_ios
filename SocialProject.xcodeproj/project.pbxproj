@@ -40,6 +40,7 @@
 		5E73B86722E20B380021D05E /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		5E73B86922E2D8BB0021D05E /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
 		5E95046122EF9419003FBF56 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		5E98D25322F0AFAD00F226B2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB3281322DEBCD1006A6C3B /* SocialProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB3281622DEBCD1006A6C3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB3281B22DEBCD2006A6C3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 		ED8CA4BAF11C64D4E31288EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E98D25322F0AFAD00F226B2 /* Alamofire.framework */,
 				5EDFC3F322EA382400422A46 /* MongoSwift.framework */,
 				D72BBE37564BADFE29172020 /* Pods_SocialProject.framework */,
 			);
