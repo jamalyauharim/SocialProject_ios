@@ -24,7 +24,18 @@ class DefaultTimeLineController: UIViewController {
     }
     
     func getPosts() {
-        RequestSingleton.queryPosts()
+        RequestSingleton.queryPosts { (responseArray) in
+            guard let responseArray = responseArray else {
+                if self.isViewLoaded && self.view.window != nil {
+
+                }
+                return
+            }
+            
+            for response in responseArray {
+               print(response)
+            }
+        }
     }
 }
 

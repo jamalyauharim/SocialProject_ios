@@ -60,17 +60,22 @@ class RequestSingleton {
         }
     }
     
-    static func queryPosts() {
+    static func queryPosts(completion: @escaping ([Post]?) -> Void){
         let completeUrl = url + "api/posts"
-        
+        var postArray: [Post] = []
         Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
-                case .success:
-                    print(response)
-                case .failure(let error):
-                    print(error)
+                    case .success(let JSON):
+                    print("Success)")
+                    case .failure(let error):
+                    print("Request failed with error: \(error)")
+                  
+
                 }
+                
+               completion(postArray)
+                
             }
         }
     }
