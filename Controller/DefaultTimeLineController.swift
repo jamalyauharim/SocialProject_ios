@@ -54,7 +54,7 @@ extension DefaultTimeLineController: UITableViewDataSource, UITableViewDelegate 
     
         let cell = tableView.dequeueReusableCell(withIdentifier: DynamicTableViewCell.identifier, for: indexPath) as! DynamicTableViewCell
         cell.content.isEditable = false
-//        cell.userNameLabel.text = contentArray[indexPath.row].userName
+        cell.userNameLabel.text = contentArray[indexPath.row].authorName
         cell.title?.text = contentArray[indexPath.row].title
         cell.content.text = contentArray[indexPath.row].content
         print(contentArray[indexPath.row].content)

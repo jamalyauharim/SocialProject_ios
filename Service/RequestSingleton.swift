@@ -84,7 +84,9 @@ class RequestSingleton {
                 }
                 
                 let json = JSON(response.data)
-                let post = Post(content: json["posts"][0]["body"].string!, title: json["posts"][0]["title"].string!)
+                let post = Post(content: json["posts"][0]["body"].string!,
+                                title: json["posts"][0]["title"].string!,
+                                authorName: json["posts"][0]["author"]["first_name"].string!)
                 postArray.append(post)
                 
                 completion(postArray)
