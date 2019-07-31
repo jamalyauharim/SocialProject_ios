@@ -8,21 +8,13 @@
 
 import Foundation
 
-import Foundation
-
-class Model {
-    
-    var name: String
-    var lastName: String
-    var email: String
-    var password: String
-    var mentor: Bool
-    
-    init(name: String, lastName: String, email: String, password: String, mentor: Bool) {
-        self.name = name
-        self.lastName = lastName
-        self.email = email
-        self.password = password
-        self.mentor = mentor
+struct userResult: Codable {
+    var user: userResult.Info
+    struct Info: Codable {
+        var email: String
+        var token: String
+        var first_name: String
+        var last_name: String
     }
 }
+

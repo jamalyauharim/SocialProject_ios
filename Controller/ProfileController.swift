@@ -10,10 +10,11 @@ import UIKit
 
 class ProfileController: UIViewController {
     
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userLastName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     

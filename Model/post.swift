@@ -13,7 +13,6 @@ struct postResult: Codable {
     var posts: [postResult.Post]
     
     struct Post: Codable {
-        
         struct Author: Codable {
             var first_name : String
         }

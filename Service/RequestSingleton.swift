@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class RequestSingleton {
     private static let url: String = "http://localhost:5000/"
     private static var token: String = ""
+    
     static func createAccount(name: String, lastName: String, email: String, password: String, mentorAccount: Bool) {
         
         let parameters: [String : Any] = [
@@ -76,23 +76,22 @@ class RequestSingleton {
             ]
         ]
         
-        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
             DispatchQueue.main.async {
                 switch response.result {
-                case .success:
-                    print("User authenticated")
+                case .success(let JSON):
+                    print("User authenticated \(JSON)")
                 case .failure(let error):
                     print("Not possible to authenticate user = \(error)")
                 }
                 
-                let json = JSON(response.data)
+                let parsedData = try? JSONDecoder().decode(userResult.self, from: response.data!)
+
                 // Check for correct email & password
-                let result = json["errors"]["email or password"]
-                if (result == "is invalid") {
+                if (parsedData == nil) {
                     completion(false)
                 } else {
-                        let caughtToken = json["user"]["token"]
-                        self.token = caughtToken.string!
+                    self.token = parsedData!.user.token
                 }
                 completion(true)
             }
