@@ -61,7 +61,7 @@ class CreatePostController: UIViewController {
                 return
         }
         
-//        RequestSingleton.createPost(userName: RequestSingleton.getUserId(), title: postTitle.text!, content: postContent.text!, category: categorySelectionTextField.text!)
+        RequestSingleton.createPost(title: postTitle.text!, content: postContent.text!)
         
         performSegue(withIdentifier: "backToMainTimeLine", sender: self)
     }

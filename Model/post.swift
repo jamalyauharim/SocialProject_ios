@@ -8,19 +8,18 @@
 
 import Foundation
 
-class Post {
-
-    static let API_QUESTION_PARAMETER_KEY = "question"
-    static let API_ANSWER_PARAMETER_KEY = "answer"
-
-    var authorName: String
-    var title: String
-    var content: String
-
-    init(content: String, title: String, authorName: String) {
-        self.title = title
-        self.content = content
-        self.authorName = authorName
+struct postResult: Codable {
+    var postsCount: Int
+    var posts: [postResult.Post]
+    
+    struct Post: Codable {
+        
+        struct Author: Codable {
+            var first_name : String
+        }
+        var author : Author
+        var title: String
+        var body: String
     }
 }
 
