@@ -182,4 +182,25 @@ class RequestSingleton {
             }
         }
     }
+    
+    static func deleteComment(slug: String, commentId: String) {
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Token " + self.token
+        ]
+        
+        let completeUrl = url + "api/posts/" + slug + "/comments/" + commentId
+        
+        Alamofire.request(completeUrl, method: .delete, encoding: JSONEncoding.default, headers: headers).responseString { response in
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success:
+                    print("success")
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                }
+            }
+        }
+    }
+
 }

@@ -16,7 +16,7 @@ struct commentsResult: Codable {
             var first_name: String
             var last_name: String
         }
-        
+        var id: String
         var body: String
         var author: Author
     }

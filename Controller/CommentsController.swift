@@ -56,6 +56,7 @@ class CommentsController: UIViewController {
         }
     }
     
+
     @IBAction func postComment(_ sender: Any) {
         
         if (commentTextField.text?.isEmpty == true) {
@@ -70,22 +71,21 @@ class CommentsController: UIViewController {
             }
         }
     }
-    
-   
 }
 
 extension CommentsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentsArray.count
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
         cell.commentContentLabel.text =  "  " + commentsArray[indexPath.row].body
         cell.authorLabel.text = commentsArray[indexPath.row].author.first_name + " " + commentsArray[indexPath.row].author.last_name
+        cell.commentId = commentsArray[indexPath.row].id
+        cell.postSlug = slug
         return cell
-        
     }
-    
     
 }
