@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.83529411764705885" green="0.64313725490196072" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="q8t-m9-P19" firstAttribute="trailing" secondItem="LSV-Th-fKo" secondAttribute="trailing" id="0Rb-vt-zyi"/>
                             <constraint firstItem="mpV-H7-aRo" firstAttribute="top" secondItem="LSV-Th-fKo" secondAttribute="bottom" constant="17" id="3bg-Qa-G4e"/>
@@ -365,7 +365,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.83529411764705885" green="0.64313725490196072" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="Uej-cs-lpF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="user_56px" selectedImage="user_56px" id="ss2-T7-fGh">
@@ -412,7 +412,7 @@
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-tf-A2x">
                                                     <rect key="frame" x="20" y="168" width="374" height="282"/>
-                                                    <color key="backgroundColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="282" id="mJD-KT-akR"/>
@@ -424,7 +424,7 @@
                                                 </textView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-bo-WI6">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
-                                                    <color key="backgroundColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="zCv-2s-rTF"/>
                                                     </constraints>
@@ -455,7 +455,7 @@
                                                 <constraint firstItem="iqa-bo-WI6" firstAttribute="leading" secondItem="09j-0B-y7h" secondAttribute="leading" id="ze8-iw-siJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.83529411764705885" green="0.64313725490196072" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="content" destination="9XL-tf-A2x" id="Bli-QK-QR8"/>
@@ -541,6 +541,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="708" id="lS0-eg-3hZ"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="70" id="wSN-qH-IkC" customClass="CommentTableViewCell" customModule="SocialProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -552,16 +553,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-Qs-Wor">
                                                     <rect key="frame" x="20" y="11" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f6-Te-URJ">
                                                     <rect key="frame" x="20" y="38" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.83529411760000005" green="0.64313725489999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="9f6-Te-URJ" firstAttribute="top" secondItem="pcH-Qs-Wor" secondAttribute="bottom" constant="6" id="3PX-MM-z0I"/>
                                                 <constraint firstItem="9f6-Te-URJ" firstAttribute="bottom" secondItem="b13-3V-f0f" secondAttribute="bottomMargin" id="ANj-Je-UVk"/>
@@ -590,36 +592,40 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert comment here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-xa-FQC">
-                                <rect key="frame" x="20" y="804" width="278" height="30"/>
+                                <rect key="frame" x="20" y="819" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nZ-eh-gdA">
-                                <rect key="frame" x="328" y="804" width="46" height="30"/>
+                                <rect key="frame" x="329" y="816" width="46" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="O3q-rC-bIa"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" red="0.83529411760000005" green="0.64313725489999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Post"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2nZ-eh-gdA" firstAttribute="leading" secondItem="kMg-xa-FQC" secondAttribute="trailing" constant="30" id="5Jw-gA-Ew7"/>
-                            <constraint firstItem="kMg-xa-FQC" firstAttribute="top" secondItem="pi8-0S-rxU" secondAttribute="bottom" constant="8" symbolic="YES" id="7kx-KL-rhF"/>
-                            <constraint firstItem="kMg-xa-FQC" firstAttribute="top" secondItem="2nZ-eh-gdA" secondAttribute="top" id="9fR-I8-4as"/>
+                            <constraint firstItem="2nZ-eh-gdA" firstAttribute="leading" secondItem="kMg-xa-FQC" secondAttribute="trailing" constant="31" id="5Jw-gA-Ew7"/>
+                            <constraint firstItem="kMg-xa-FQC" firstAttribute="top" secondItem="pi8-0S-rxU" secondAttribute="bottom" constant="23" id="7kx-KL-rhF"/>
+                            <constraint firstItem="kMg-xa-FQC" firstAttribute="top" secondItem="2nZ-eh-gdA" secondAttribute="top" constant="3" id="9fR-I8-4as"/>
                             <constraint firstItem="pi8-0S-rxU" firstAttribute="leading" secondItem="AT7-Cn-Ke9" secondAttribute="leading" id="Al9-eg-gvg"/>
-                            <constraint firstItem="dC9-gG-gqg" firstAttribute="trailing" secondItem="2nZ-eh-gdA" secondAttribute="trailing" constant="40" id="QLu-GP-xds"/>
+                            <constraint firstItem="dC9-gG-gqg" firstAttribute="trailing" secondItem="2nZ-eh-gdA" secondAttribute="trailing" constant="39" id="QLu-GP-xds"/>
                             <constraint firstItem="pi8-0S-rxU" firstAttribute="trailing" secondItem="AT7-Cn-Ke9" secondAttribute="trailing" id="XCn-bM-PP7"/>
                             <constraint firstItem="pi8-0S-rxU" firstAttribute="top" secondItem="AT7-Cn-Ke9" secondAttribute="bottom" id="ZmO-wP-ovz"/>
                             <constraint firstItem="pi8-0S-rxU" firstAttribute="leading" secondItem="DmW-uP-U2P" secondAttribute="leading" id="dC4-eu-qHH"/>
-                            <constraint firstItem="dC9-gG-gqg" firstAttribute="bottom" secondItem="kMg-xa-FQC" secondAttribute="bottom" constant="28" id="fQG-6W-iMc"/>
+                            <constraint firstItem="dC9-gG-gqg" firstAttribute="bottom" secondItem="kMg-xa-FQC" secondAttribute="bottom" constant="13" id="fQG-6W-iMc"/>
                             <constraint firstItem="kMg-xa-FQC" firstAttribute="leading" secondItem="DmW-uP-U2P" secondAttribute="leadingMargin" id="lQD-93-XVW"/>
                             <constraint firstAttribute="trailing" secondItem="pi8-0S-rxU" secondAttribute="trailing" id="q78-2j-OQv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dC9-gG-gqg"/>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="kMg-xa-FQC" id="iZO-7Z-atw"/>
+                        <outlet property="postCommentButton" destination="2nZ-eh-gdA" id="WnS-E8-wSr"/>
                         <outlet property="tableView" destination="pi8-0S-rxU" id="0dm-OF-7f2"/>
                     </connections>
                 </viewController>
@@ -636,9 +642,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-gE-lXQ">
-                                <rect key="frame" x="167" y="755" width="81" height="30"/>
+                                <rect key="frame" x="141" y="751" width="138" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Post"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <state key="normal" title="Create Post">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.64313725489999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="createPost:" destination="QcS-MX-r1a" eventType="touchUpInside" id="sim-v8-bXW"/>
                                     <segue destination="DsK-Mv-H8H" kind="show" identifier="backToMainTimeLine" id="4YP-OG-uLO"/>
