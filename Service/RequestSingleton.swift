@@ -16,7 +16,7 @@ struct userInfoForEveryone {
 }
 
 class RequestSingleton {
-    private static let url: String = "http://localhost:5000/"
+    private static let url: String = "http://beenthere.ddns.net:5000/"
     private static var token: String = ""
     static var userInfo = userInfoForEveryone(name: "", lastName: "")
     
@@ -89,8 +89,8 @@ class RequestSingleton {
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
             DispatchQueue.main.async {
                 switch response.result {
-                case .success(let JSON):
-                    print("User authenticated \(JSON)")
+                case .success:
+                    print("User authenticated")
                 case .failure(let error):
                     print("Not possible to authenticate user = \(error)")
                 }

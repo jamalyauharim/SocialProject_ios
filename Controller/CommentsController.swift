@@ -25,6 +25,10 @@ class CommentsController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         getComments(slug: slug)
         self.commentsArray.reverse()
@@ -56,17 +60,16 @@ class CommentsController: UIViewController {
         }
     }
     
-
     @IBAction func postComment(_ sender: Any) {
         
         if (commentTextField.text?.isEmpty == true) {
             
         } else {
-            DispatchQueue.main.async {
-                self.commentsArray = []
-                self.postComment(slug: self.slug)
-                self.commentTextField.text = ""
-                self.getComments(slug: self.slug)
+            commentsArray = []
+            postComment(slug: self.slug)
+            commentTextField.text = ""
+            getComments(slug: self.slug)
+            if (commentsArray.count != 0) {
                 self.tableView.reloadData()
             }
         }
@@ -85,6 +88,8 @@ extension CommentsController: UITableViewDelegate, UITableViewDataSource {
         cell.authorLabel.text = commentsArray[indexPath.row].author.first_name + " " + commentsArray[indexPath.row].author.last_name
         cell.commentId = commentsArray[indexPath.row].id
         cell.postSlug = slug
+        cell.deleteCommentButton.isHidden = true
+        
         return cell
     }
     

@@ -15,6 +15,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var userLastName: UILabel!
     var nameForLabel: String = ""
     var lastNameForLabel: String = ""
+    var bio: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -30,6 +30,11 @@ class CreatePostController: UIViewController {
         super.viewDidLoad()
         createCategoryPicker()
         createToolBar()
+        self.view.endEditing(true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func createCategoryPicker() {
