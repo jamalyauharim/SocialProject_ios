@@ -21,9 +21,10 @@ class CreatePostController: UIViewController {
     var selectedCategory: String = ""
     
     // categories of post
-    let categories = [ "Cancer confrontation",
-                      "Relationship struglles",
-                      "loneliness" ]
+    let categories = [ "Cancer Survivor",
+                      "Weight Loss",
+                      "Loneliness",
+                      "Other" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()

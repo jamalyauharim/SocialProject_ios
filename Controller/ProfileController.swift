@@ -11,15 +11,24 @@ import UIKit
 class ProfileController: UIViewController {
     
     // components and variables.
-    var userNameForDisplay: String = ""
-    var userLastNameForDisplay: String = ""
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userLastName: UILabel!
+    var nameForLabel: String = ""
+    var lastNameForLabel: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
+        userName.text = nameForLabel
+        userLastName.text = lastNameForLabel
     }
     
     
+    func getUserInfo() {
+        RequestSingleton.getUserInfo { (response) in
+            self.nameForLabel = response?.name ?? "nothing"
+            self.lastNameForLabel = response?.lastName ?? "nothing"
+        }
+    }
     
 }

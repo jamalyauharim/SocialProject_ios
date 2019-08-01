@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 import Alamofire
 
-var global: String = ""
+struct userInfoForEveryone {
+    var name: String
+    var lastName: String
+}
+
 class RequestSingleton {
     private static let url: String = "http://localhost:5000/"
     private static var token: String = ""
+    static var userInfo = userInfoForEveryone(name: "", lastName: "")
     
     static func createAccount(name: String, lastName: String, email: String, password: String, mentorAccount: Bool) {
         
@@ -67,6 +72,10 @@ class RequestSingleton {
         }
     }
     
+    static func getUserInfo(completion: @escaping (userInfoForEveryone?) -> Void) {
+        let sendingInformation = userInfoForEveryone.init(name: self.userInfo.name, lastName: self.userInfo.lastName)
+        completion(sendingInformation)
+    }
     
     static func authenticateUser(email: String, password: String, completion: @escaping (Bool?) -> Void) {
         let completeUrl = url + "api/users/login"
@@ -93,6 +102,8 @@ class RequestSingleton {
                     completion(false)
                 } else {
                     self.token = parsedData!.user.token
+                    self.userInfo.name = parsedData!.user.first_name
+                    self.userInfo.lastName = parsedData!.user.last_name
                 }
                 completion(true)
             }
