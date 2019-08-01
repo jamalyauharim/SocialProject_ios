@@ -57,11 +57,21 @@ extension DefaultTimeLineController: UITableViewDataSource, UITableViewDelegate 
         cell.userNameLabel.text = "   " + contentArray[indexPath.row].author.first_name
         cell.title?.text = contentArray[indexPath.row].title
         cell.content.text = contentArray[indexPath.row].body
+        cell.slug = contentArray[indexPath.row].slug
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        self.performSegue(withIdentifier: "goToComments", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let commentsController = segue.destination as? CommentsController,
+            let index = tableView.indexPathForSelectedRow?.row
+            else {
+                return
+        }
+        commentsController.slug = contentArray[index].slug
     }
 }

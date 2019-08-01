@@ -10,6 +10,9 @@ import UIKit
 
 class ProfileController: UIViewController {
     
+    // components and variables.
+    var userNameForDisplay: String = ""
+    var userLastNameForDisplay: String = ""
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userLastName: UILabel!
     

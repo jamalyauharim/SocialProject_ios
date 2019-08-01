@@ -17,4 +17,3 @@ struct userResult: Codable {
         var last_name: String
     }
 }
-

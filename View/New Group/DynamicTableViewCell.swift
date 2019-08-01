@@ -15,7 +15,7 @@ class DynamicTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var userNameLabel: UILabel!
-    
+    var slug: String = ""
     
 }
 

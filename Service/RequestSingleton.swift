@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
+var global: String = ""
 class RequestSingleton {
     private static let url: String = "http://localhost:5000/"
     private static var token: String = ""
@@ -98,7 +99,7 @@ class RequestSingleton {
         }
     }
     
-    static func queryPosts(completion: @escaping ([postResult.Post]?) -> Void){
+    static func queryPosts(completion: @escaping ([postResult.Post]?) -> Void) {
         let completeUrl = url + "api/posts"
         var postArray: [postResult.Post] = []
         
@@ -118,6 +119,55 @@ class RequestSingleton {
                 }
 
                 completion(postArray)
+            }
+        }
+    }
+    
+    static func queryComments(slug: String, completion: @escaping ([commentsResult.Info]?) -> Void) {
+        let completeUrl = url + "api/posts/" + slug + "/comments"
+        var commentsArray: [commentsResult.Info] = []
+        
+        Alamofire.request(completeUrl, method: .get, encoding: JSONEncoding.default).responseData { response in
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success:
+                    print("success")
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                }
+            
+                let parsedData = try? JSONDecoder().decode(commentsResult.self, from: response.data!)
+
+                for data in (parsedData?.comments)! {
+                    commentsArray.append(data)
+                }
+
+                completion(commentsArray)
+            }
+        }
+    }
+    
+    static func createComment(content: String, slug: String) {
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Token " + self.token
+        ]
+        
+        let parameters: [String :  Any] = [
+            "comment": [
+                "body": content
+            ]
+        ]
+        
+        let completeUrl = url + "api/posts/" + slug + "/comments"
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString { response in
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success:
+                    print(response)
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }

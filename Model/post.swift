@@ -16,6 +16,7 @@ struct postResult: Codable {
         struct Author: Codable {
             var first_name : String
         }
+        var slug : String
         var author : Author
         var title: String
         var body: String
