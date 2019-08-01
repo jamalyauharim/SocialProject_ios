@@ -13,12 +13,13 @@ import Alamofire
 struct userInfoForEveryone {
     var name: String
     var lastName: String
+    var mentor: String
 }
 
 class RequestSingleton {
     private static let url: String = "http://beenthere.ddns.net:5000/"
     private static var token: String = ""
-    static var userInfo = userInfoForEveryone(name: "", lastName: "")
+    static var userInfo = userInfoForEveryone(name: "", lastName: "", mentor: "")
     
     static func createAccount(name: String, lastName: String, email: String, password: String, mentorAccount: Bool) {
         
@@ -73,7 +74,7 @@ class RequestSingleton {
     }
     
     static func getUserInfo(completion: @escaping (userInfoForEveryone?) -> Void) {
-        let sendingInformation = userInfoForEveryone.init(name: self.userInfo.name, lastName: self.userInfo.lastName)
+        let sendingInformation = userInfoForEveryone.init(name: self.userInfo.name, lastName: self.userInfo.lastName, mentor: self.userInfo.mentor)
         completion(sendingInformation)
     }
     
@@ -86,11 +87,11 @@ class RequestSingleton {
             ]
         ]
         
-        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
+        Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             DispatchQueue.main.async {
                 switch response.result {
-                case .success:
-                    print("User authenticated")
+                case .success(let JSON):
+                    print("User authenticated \(JSON)")
                 case .failure(let error):
                     print("Not possible to authenticate user = \(error)")
                 }
@@ -104,6 +105,7 @@ class RequestSingleton {
                     self.token = parsedData!.user.token
                     self.userInfo.name = parsedData!.user.first_name
                     self.userInfo.lastName = parsedData!.user.last_name
+//                    self.userInfo.mentor = parsedData!.user.is_mentor
                 }
                 completion(true)
             }

@@ -15,5 +15,6 @@ struct userResult: Codable {
         var token: String
         var first_name: String
         var last_name: String
+//        var is_mentor: String
     }
 }
