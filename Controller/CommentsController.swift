@@ -29,7 +29,8 @@ class CommentsController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getComments(slug: slug)
-        print(commentsArray)
+        commentsArray.reverse()
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,10 +47,25 @@ class CommentsController: UIViewController {
             for response in responseArray {
                 self.commentsArray.append(response)
             }
-            
-            print(self.commentsArray)
+            self.commentsArray.reverse()
         }
     }
+    
+    func postComment(slug: String) {
+        if (commentTextField.text?.isEmpty == true) {
+            
+        } else {
+            RequestSingleton.createComment(content: commentTextField.text!, slug: slug)
+        }
+    }
+    
+    @IBAction func postComment(_ sender: Any) {
+        postComment(slug: self.slug)
+        commentsArray = []
+        getComments(slug: self.slug)
+    }
+    
+   
 }
 
 extension CommentsController: UITableViewDelegate, UITableViewDataSource {

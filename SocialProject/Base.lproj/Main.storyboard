@@ -591,7 +591,7 @@
                                     <outlet property="delegate" destination="ofZ-DV-TOP" id="0gv-tf-YBB"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert comment here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-xa-FQC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert comment here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-xa-FQC">
                                 <rect key="frame" x="20" y="819" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -605,6 +605,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="tintColor" red="0.83529411760000005" green="0.64313725489999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postComment:" destination="ofZ-DV-TOP" eventType="touchUpInside" id="fGJ-D5-ycR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
